@@ -1,5 +1,7 @@
 # kelip-paper-reading
 
+**简体中文** | [English](README.en.md)
+
 让 AI Agent 带你精读一篇论文。它不给你一段摘要了事，而是像一个已经读懂这篇的人，一站一站带你看。
 
 丢给它一个 arXiv 链接，它先把 **PDF、LaTeX 源码、每张图（自动裁好的 PNG）、官方代码** 拉到本地，
