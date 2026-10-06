@@ -1,5 +1,7 @@
 # 精读笔记 · {{标题}}
 
+> 配套 HTML：`带读.html`（需与本笔记同步更新；HTML 模板 `references/reading-html-template.html`）。每讲完一站，同一轮更新两份文件。
+
 > {{arXiv ID / 会议}} · {{机构}} · {{日期}} · 代码：{{链接，或"无"}} · 材料都在本目录（paper.pdf / paper.tex / figures/）
 
 ## 基本情况

@@ -14,7 +14,7 @@ After each stop it asks whether you want to move on:
                                                                                           (optional ⑦ Results, and where the paper stands today)
 ```
 
-As it goes, it writes each stop and every question you asked into a notes file in the paper folder (`精读笔记.md`, "reading notes").
+As it goes, it keeps two companion artifacts in the paper folder in sync: `精读笔记.md` (editable, searchable reading notes) and `带读.html` (a browsable, illustrated reading guide). Both are updated after every stop.
 
 ## Six stops: what you can say after each one
 
@@ -38,6 +38,7 @@ As it goes, it writes each stop and every question you asked into a notes file i
 - **Keep sources apart.** What the paper says, what the code shows, and what the agent is guessing are labelled separately;
   places where the code disagrees with the paper get pointed out.
 - **Code is read-only.** The official repo is cloned to compare against, not to install or run.
+- **Keep both reading artifacts in sync.** Update `精读笔记.md` and `带读.html` together after each stop; use relative image paths and never publish automatically. Read and merge existing user files instead of overwriting them.
 
 ## Install
 
@@ -81,7 +82,8 @@ papers/pi0-vision-language-action/
 ├── meta.json         title, authors, dates, abstract, code and project-page links
 ├── figures/          one PNG per figure and table; index.md has captions and where each is cited; _contact.png shows them all at once
 ├── code/             the official code (shallow clone)
-└── 精读笔记.md        reading notes: the gist of each stop, the figures used, the questions you asked
+├── 精读笔记.md        stop summaries, source locations, and Q&A
+└── 带读.html          synced browser version, using relative image paths
 ```
 
 In a project laid out like [research-workflow](https://github.com/skJack/research-workflow) (the current directory has `related_work/`),
@@ -129,6 +131,7 @@ you already have (only what's missing gets filled in). The scripts print their p
 | `AGENTS.md` | One-page pointer for agents that read it automatically |
 | `references/examples.md` | Examples of what each stop looks like when it's done well |
 | `references/notes-template.md` | Template for the reading notes |
+| `references/reading-html-template.html` | Template for the browsable reading guide |
 | `profile.example.md` | Template for your profile (copy to `profile.md`) |
 | `scripts/fetch_paper.py` | Downloads PDF / LaTeX / metadata, flattens the source, builds the outline, finds and shallow-clones the official code, runs figure extraction |
 | `scripts/extract_figures.py` | Crops every figure and table out of the PDF by caption, writes `index.md` and a contact sheet |

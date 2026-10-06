@@ -9,7 +9,8 @@
 2. 第 0 步用 `scripts/fetch_paper.py <arXiv 链接 / PDF / 目录>` 拉材料，看一眼 `figures/_contact.png` 检查裁图。
 3. 开讲前自己先读懂：读 `outline.md`、`paper.tex`，亲眼看关键的图；第一次讲之前读一遍 `references/examples.md`。
 4. **讲到哪张图就把那张图显示给用户**，先说「这张图是什么」再讲；一次只讲一站，讲完问要不要继续。
-5. 公式写成 Unicode + 符号表 + 一组代入的数字，不要写裸 LaTeX。
-6. 有 `profile.md` 就按它调整讲法（熟的一句带过、不熟的先铺垫）。
+5. 每篇同时维护论文目录内的 `精读笔记.md` 和 `带读.html`；每讲完一站同轮同步更新两份，内容事实与引用保持一致。沿用用户已有 HTML 时先读取并合并，不覆盖。
+6. 公式写成 Unicode + 符号表 + 一组代入的数字，不要写裸 LaTeX。
+7. 有 `profile.md` 就按它调整讲法（熟的一句带过、不熟的先铺垫）。
 
 依赖：Python 3 + PyMuPDF（`pip install pymupdf`）。代码只读，不替用户跑仓库脚本或装依赖。

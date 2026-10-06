@@ -58,7 +58,7 @@ python3 <skill>/scripts/fetch_paper.py <arXiv 链接 / ID / PDF 链接 / 本地 
 4. 有代码就扫一遍结构：README、模型 forward、loss、dataset / transform、推理入口各在哪个文件哪个函数。细读留到 ③⑤⑥。
 5. 读 `<skill>/profile.md`（用户背景、熟什么不熟什么、喜欢什么例子），没有就跳过。
    profile 里写着用户读过这篇时，基本情况后面加一句「这篇你读过，按顺序来，还是直接跳到某一站？」——重读的人多半只想看其中几站。
-6. 在论文目录里建 `精读笔记.md`（模板 `references/notes-template.md`），写好「基本情况」和「导读地图」：
+6. 在论文目录里建 `精读笔记.md`（模板 `references/notes-template.md`）和 `带读.html`（模板 `references/reading-html-template.html`），写好「基本情况」和「导读地图/页面导航」：
    每站讲什么、用哪张图、在 paper.tex 哪几行、对应代码哪个文件。地图是给你自己用的路线，不整张贴给用户。
 
 ## 第 2 步：开场——基本情况，然后直接进第 ① 站
@@ -238,6 +238,16 @@ python3 <skill>/scripts/fetch_paper.py <arXiv 链接 / ID / PDF 链接 / 本地 
 - 数字带出处（「图 4」「表 2」「附录 B」「`configs/pi0.py:120`」）。
 - 比喻只用日常物理场景（下棋、开车、考试抄答案），不用拟人小故事（「模型就像一个厨师……」），用完给对照表落回论文。
 
+## 双格式同步：精读笔记 + 带读 HTML
+
+每篇论文目录维护两份互补产物：`精读笔记.md` 便于编辑、检索；`带读.html` 便于浏览、配图和复习。模板分别为 `references/notes-template.md` 与 `references/reading-html-template.html`。
+
+- 开讲前创建两份文件；用户已有同名文件时先读取，不覆盖其内容，合并到现有文件或另存新文件并说明。
+- 每完成一站，必须在同一轮同时写入两份文件：笔记记录该站要点、原文位置/图表、证据边界及问答；HTML 更新对应章节、引用来源、图片和阅读进度。
+- 两份内容不必逐字相同，但事实、数值、日期、术语和来源必须一致。后续纠错或用户补充若影响已讲内容，两份文件都要同步修订。
+- 图片使用相对路径（如 `figures/fig-03.png`），链接文件须存在；无法提供图时写明缺失，不生成伪链接。HTML 应可离线打开，外链来源注明标题和日期。
+- 每轮对话仍只讲一站；双文件更新完成后再询问是否继续。除非用户明确要求，不部署、不上传 HTML。
+
 ## 精读笔记：边讲边记
 
 论文目录里的 `精读笔记.md`（模板 `references/notes-template.md`）。目录里已有的其他笔记（比如 research-workflow 生成的 `调研笔记.md`）是另一份，不要动它。
@@ -263,4 +273,4 @@ python3 <skill>/scripts/fetch_paper.py <arXiv 链接 / ID / PDF 链接 / 本地 
 | `crop.py <图或 paper.pdf> [--page N] [--grid [--step 0.05]] [x0 y0 x1 y1] -o 输出.png` | 放大局部 / 裁公式 / 重裁坏图（坐标是 0–1 的比例） |
 
 论文目录：`paper.pdf` · `source/` · `paper.tex` · `paper.txt` · `outline.md` · `meta.json` ·
-`figures/`（`fig-NN.png` `tab-NN.png` `index.md` `_contact.png`）· `code/`（或 `复现/<repo>/code`）· `精读笔记.md`
+`figures/`（`fig-NN.png` `tab-NN.png` `index.md` `_contact.png`）· `code/`（或 `复现/<repo>/code`）· `精读笔记.md` · `带读.html`

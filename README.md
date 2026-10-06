@@ -12,7 +12,7 @@
                                                                                 （可选 ⑦ 实验和这篇现在的地位）
 ```
 
-边讲边把每一站和你问过的问题记进论文目录里的 `精读笔记.md`。
+边讲边把每一站和你问过的问题同步整理到论文目录里的 `精读笔记.md` 与 `带读.html`：前者便于检索编辑，后者便于浏览、导航和配图。每站讲完同轮更新两份。
 
 ## 六站，每站讲完你能说出什么
 
@@ -33,6 +33,7 @@
 - **先基本情况，再设计细节。** 谁做的、输入什么输出什么、开源没有；去掉论文的推销腔。
 - **区分来源。** 论文写的、代码里看到的、它自己推测的，分开标；代码和论文对不上的地方会指出来。
 - **代码只读不跑。** 克隆官方仓库是为了对照，不替你装依赖、不跑脚本。
+- **两种阅读产物保持同步。** 每讲完一站，同轮更新 `精读笔记.md` 和 `带读.html`；HTML 图片用相对路径，不自动发布。已有文件先读后合并，不覆盖。
 
 ## 安装
 
@@ -72,7 +73,8 @@ papers/pi0-vision-language-action/
 ├── meta.json         标题、作者、日期、摘要、代码和项目页链接
 ├── figures/          每张图和表一个 PNG，index.md 写 caption 和正文在哪引用，_contact.png 一眼看完全部
 ├── code/             官方代码（浅克隆）
-└── 精读笔记.md        每一站的要点、用到的图、你问过的问题
+├── 精读笔记.md        每一站要点、原文位置和问答
+└── 带读.html          与笔记同步的浏览版，图片使用相对路径
 ```
 
 在 [research-workflow](https://github.com/skJack/research-workflow) 结构的项目里（当前目录有 `related_work/`），
@@ -117,6 +119,7 @@ python3 scripts/crop.py ~/papers/pi0/paper.pdf --page 4 0.08 0.06 0.92 0.3 -o eq
 | `AGENTS.md` | 一页指路，给会自动读它的 agent |
 | `references/examples.md` | 每一站讲成什么样的样例 |
 | `references/notes-template.md` | 精读笔记模板 |
+| `references/reading-html-template.html` | 浏览版带读 HTML 模板 |
 | `profile.example.md` | 用户画像模板（复制成 `profile.md`） |
 | `scripts/fetch_paper.py` | 下载 PDF / LaTeX / 元数据，拍平源码，生成大纲，找官方代码并浅克隆，调用裁图 |
 | `scripts/extract_figures.py` | 按 caption 从 PDF 裁出每张图和表，写 `index.md` 和总览拼图 |
